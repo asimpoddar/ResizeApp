@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+            
+            
+            <meta charset="UTF-8">
+                <title>Upload</title>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+                
+                </head>
+    <header>
+        <div id="header">
+            <h1>NYU Tandon School of Engineering</h1>
+            <nav class = 'navbar'>
+                <ul class = 'left'>
+                    <li><a href = "{{ url_for('home') }}"> Home</a></li>
+                    </u1>
+                    <ul class = 'right'>
+                        <li><a href = "{{ url_for('login') }}"> Login</a></li>
+                        </u1>
+                        </nav>
+        </div>
+    </header>
+    <div class="container">
+    </div>
+    
+    
+    <body>
+        <h2>Resize your image!</h2>
+        <h3>Size won't matter!</h3>
+            
+            {% block content %}
+            <div class="container">
+                {% import "bootstrap/wtf.html" as wtf %}
+                <form class="form-signin" method = "POST" action = "/signup">
+                    <h2 class = "form-signin-header"> Sign Up </h2>
+                    {{ form.hidden_tag() }}
+                    {{ wtf.form_field(form.username) }}
+                    {{ wtf.form_field(form.email) }}
+                    {{ wtf.form_field(form.password) }}
+                                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+                                </form>
+                
+            </div> <!-- /container -->
+            {% endblock %}
+    </body>
+</html>
+

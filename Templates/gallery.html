@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+            
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+            <title>Upload</title>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+            
+            </head>
+    <body>
+        <header>
+            <div id="header">
+                <h1>NYU Tandon School of Engineering</h1>
+                <nav class = 'navbar'>
+                    
+                    <ul class = 'left'>
+                        <li><a href = "{{ url_for('loggedin') }}"> Home</a></li>
+                        </u1>
+                        <ul class = 'mid'>
+                            <li><a href = "{{ url_for('loggedin') }}"> {{ name }}</a></li>
+                            </u1>
+                            <ul class = 'right'>
+                                <li><a href = "{{ url_for('logout') }}"> Logout</a></li>
+                                </u1>
+                                </nav>
+            </div>
+        </header>
+        {% block content %}
+            
+            <div class="row">
+                
+                <div class="col-lg-12">
+                    <h1 class="page-header">Thumbnail Gallery</h1>
+                </div>
+            
+        <hr>
+        {% for image_name in image_name if not image_name.startswith('.') if '-' + name + '-' in image_name%}
+      
+      <div class = "image">
+              <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <img alt="Responsive image" src = "{{ url_for( 'send_image', filename = image_name) }}" align="left" height=auto width="256" class="image" >
+ 
+           </div>     </div>
+        {%endfor%}
+        </div>
+        {% endblock %}
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"></script>
+    </body>
+</html>
+
+
+

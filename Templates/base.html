@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+            
+            <meta charset="UTF-8">
+                <title>Upload</title>
+                </head>
+    
+    <body>
+        <header>
+            <div id="header">
+                <h1>NYU Tandon School of Engineering</h1>
+                <nav class = 'navbar'>
+                    <ul class = 'left'>
+                        <li><a href = "{{ url_for('loggedin') }}"> Home</a></li>
+                        </u1>
+                        <ul class = 'mid'>
+                            <li><a href = "{{ url_for('loggedin') }}"> {{ name }}</a></li>
+                            </u1>
+                        <ul class = 'right'>
+                            <li><a href = "{{ url_for('logout') }}"> Logout</a></li>
+                            </u1>
+                            </nav>
+            </div>
+            </header>
